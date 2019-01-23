@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "435874085491",
+    "firebase_url": "https://warthonapp.firebaseio.com",
+    "project_id": "warthonapp",
+    "storage_bucket": "warthonapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435874085491:android:5994e315883f7358",
+        "android_client_info": {
+          "package_name": "com.business.warthon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435874085491-kn6v103nida1kbr7mh67f59hqlccdcj3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.business.warthon",
+            "certificate_hash": "aa693336537cc5b1e155e3b1695e2ba6c0718c81"
+          }
+        },
+        {
+          "client_id": "435874085491-5jthtgsm5quab2h18jgiuve2qm2c7cdd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9ZQV98r8SAXTTqfwu06uP0lNxLHcZTik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435874085491-5jthtgsm5quab2h18jgiuve2qm2c7cdd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
