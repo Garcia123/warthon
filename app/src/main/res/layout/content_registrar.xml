@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".login.RegistrarActivity"
+    tools:showIn="@layout/activity_registrar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:paddingTop="18dp">
+
+            <!-- correo -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_correo"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- password -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_password"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- nombres -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroNombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_nombres"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- apellidos -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_apellidos"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- apellidos -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_telefono"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- DNI -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutDni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtRegistroDni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/registro_dni"
+                    android:inputType="textEmailAddress|textAutoComplete" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

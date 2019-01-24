@@ -6,4 +6,5 @@
             android:gravity="center"
             android:src="@drawable/logo_splash_screen"/>
     </item>
+
 </layer-list>

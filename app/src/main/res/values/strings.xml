@@ -1,10 +1,30 @@
 <resources>
-    <string name="app_name">warthon</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_name">Warthon</string>
+    <string name="title_activity_main">Warthon</string>
+    <string name="title_activity_registrar">Regístrate</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!-- etiquetas para el login -->
+    <string name="login_correo">Correo</string>
+    <string name="login_password">Password</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="login_label">Si no tienes cuenta registrate</string>
+    <string name="login_aqui">aquí</string>
+    <string name="login_google">Ingresar con google</string>
+    <string name="login_todo">TODO</string>
+    <!-- etiquetas para el registo -->
+    <string name="registro_correo">Correo</string>
+    <string name="registro_password">Password</string>
+    <string name="registro_nombres">Nombres</string>
+    <string name="registro_apellidos">Apellidos</string>
+    <string name="registro_telefono">Teléfono</string>
+    <string name="registro_dni">DNI</string>
+
+
 </resources>

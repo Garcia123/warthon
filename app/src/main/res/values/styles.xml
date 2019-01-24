@@ -13,8 +13,20 @@
     </style>
 
     <style name="loginTheme" parent="AppTheme">
+        <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:windowBackground">@color/primaryDarkColor</item>
+        <item name="editTextColor">@color/primaryTextColor</item>
+        <item name="colorAccent">@color/secondaryLightColor</item>
+        <item name="colorControlNormal">@color/secondaryLightColor</item>
+        <item name="android:colorForeground">@color/secondaryLightColor</item>
+        <item name="android:textColorHint">@color/secondaryLightColor</item>
     </style>
+
+    <style name="RegistarTheme" parent="AppTheme">
+        <item name="colorAccent">@color/secondaryDarkColor</item>
+        <item name="android:textColorHint">@color/secondaryDarkColor</item>
+    </style>
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
