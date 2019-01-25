@@ -6,4 +6,13 @@
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
 
+    <!-- para el activity registrar -->
+    <item name="registrar_lock" type="drawable">@drawable/ic_lock_black_24dp</item>
+    <item name="registrar_name" type="drawable">@drawable/ic_assignment_ind_black_24dp</item>
+    <item name="registrar_correo" type="drawable">@drawable/ic_email_black_24dp</item>
+    <item name="registrar_telefono" type="drawable">@drawable/ic_local_phone_black_24dp</item>
+    <item name="registrar_dni" type="drawable">@drawable/ic_id_card</item>
+    ic_id_card
+
+
 </resources>

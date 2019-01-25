@@ -26,6 +26,15 @@
     <string name="registro_telefono">Teléfono</string>
     <string name="registro_dni">DNI</string>
     <string name="registro_registrar">Registrar</string>
+    <string name="main_servicios">Servicios Warthon</string>
+    <string name="main_drescripcion">Encuentra tu tranquilidad a tus problemas</string>
+    <string name="main_img_descripcion">Esta imagen es la imagen de los socios del estudio Warthon</string>
+    <string name="main_servicio">Servicios</string>
 
+    <!-- etiquetas para en activity main-->
+    <string-array name="values">
+        <item>Legales</item>
+        <item>Matrimoniales</item>
+    </string-array>
 
 </resources>
