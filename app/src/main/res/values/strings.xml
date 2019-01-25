@@ -25,6 +25,7 @@
     <string name="registro_apellidos">Apellidos</string>
     <string name="registro_telefono">Teléfono</string>
     <string name="registro_dni">DNI</string>
+    <string name="registro_registrar">Registrar</string>
 
 
 </resources>
