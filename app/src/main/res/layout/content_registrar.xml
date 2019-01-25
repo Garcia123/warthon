@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/registro_password"
-                    android:inputType="textEmailAddress|textAutoComplete" />
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <!-- nombres -->
@@ -81,7 +81,7 @@
                     android:inputType="textEmailAddress|textAutoComplete" />
             </android.support.design.widget.TextInputLayout>
 
-            <!-- apellidos -->
+            <!-- Telefono -->
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/textInputLayoutTelefono"
                 android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/registro_telefono"
-                    android:inputType="textEmailAddress|textAutoComplete" />
+                    android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 
             <!-- DNI -->
@@ -108,9 +108,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/registro_dni"
-                    android:inputType="textEmailAddress|textAutoComplete" />
+                    android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
 
+            <Button
+                android:text="@string/registro_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
