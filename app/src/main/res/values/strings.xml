@@ -10,7 +10,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <!-- etiquetas para el login -->
+    <!-- etiquetas para el login activity -->
     <string name="login_correo">Correo</string>
     <string name="login_password">Password</string>
     <string name="login_ingresar">Ingresar</string>
@@ -18,7 +18,8 @@
     <string name="login_aqui">aquí</string>
     <string name="login_google">Ingresar con google</string>
     <string name="login_todo">TODO</string>
-    <!-- etiquetas para el registo -->
+
+    <!-- etiquetas para el registo activity -->
     <string name="registro_correo">Correo</string>
     <string name="registro_password">Password</string>
     <string name="registro_nombres">Nombres</string>
@@ -26,10 +27,20 @@
     <string name="registro_telefono">Teléfono</string>
     <string name="registro_dni">DNI</string>
     <string name="registro_registrar">Registrar</string>
+
+    <!-- eiquetas para el main activity -->
     <string name="main_servicios">Servicios Warthon</string>
     <string name="main_drescripcion">Encuentra tu tranquilidad a tus problemas</string>
     <string name="main_img_descripcion">Esta imagen es la imagen de los socios del estudio Warthon</string>
     <string name="main_servicio">Servicios</string>
+    <string name="main_consulta">Tipo de consulta</string>
+    <string name="main_btn_consultar">Consultar</string>
+    <string name="menu_title_inicio">Inicio</string>
+    <string name="menu_title_chat">Historial de chat</string>
+    <string name="menu_title_call">Historial de video llamadas</string>
+    <string name="menu_title_citas">Mis citas</string>
+    <string name="menu_title_otros">Otras opciones</string>
+    <string name="menu_title_signoff">Cerrar sesión</string>
 
     <!-- etiquetas para en activity main-->
     <string-array name="values">

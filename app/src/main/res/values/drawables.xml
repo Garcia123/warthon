@@ -12,7 +12,10 @@
     <item name="registrar_correo" type="drawable">@drawable/ic_email_black_24dp</item>
     <item name="registrar_telefono" type="drawable">@drawable/ic_local_phone_black_24dp</item>
     <item name="registrar_dni" type="drawable">@drawable/ic_id_card</item>
-    ic_id_card
+    
+    <!-- para el activity main -->
+    <item name="main_servicios" type="drawable">@drawable/ic_account_balance_black_24dp</item>
+    <item name="main_consultas" type="drawable">@drawable/ic_gavel_black_24dp</item>
 
-
+    
 </resources>

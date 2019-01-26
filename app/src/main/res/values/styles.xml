@@ -29,13 +29,24 @@
     </style>
 
     <style name="MainThema" parent="AppTheme">
-
+        <item name="android:textColor">#FF767676</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppButton">
+        <item name="android:textAllCaps">false</item>
+        <!-- estado del boton normal-->
+        <item name="colorButtonNormal">@color/primaryLightColor</item>
+        <!-- estado del boton cuando el boton esta precionado-->
+        <item name="colorControlHighlight">@color/primaryDarkColor</item>
+        <!-- color de la letra-->
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

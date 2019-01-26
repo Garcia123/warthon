@@ -74,6 +74,7 @@
                     android:layout_marginEnd="16dp"
                     android:orientation="vertical">
 
+                    <!-- sspinner servicios legales -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -82,25 +83,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/main_servicio" />
-
-                        <!--<Spinner
-                            style="@style/Widget.AppCompat.Spinner.Underlined"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/values"
-                            android:spinnerMode="dropdown" /> -->
+                            android:text="@string/main_servicio"
+                            android:textStyle="bold" />
 
                         <LinearLayout
-                            android:gravity="center"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
 
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
-                                android:background="@drawable/ic_icon_google"
+                                android:background="@drawable/main_servicios"
                                 android:contentDescription="@string/login_todo" />
 
                             <Spinner
@@ -112,6 +107,47 @@
                         </LinearLayout>
 
                     </android.support.design.widget.TextInputLayout>
+
+                    <!-- sspinner tipo consulta -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/main_consulta" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/main_consultas"
+                                android:contentDescription="@string/login_todo" />
+
+                            <Spinner
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/values"
+                                android:spinnerMode="dropdown" />
+                        </LinearLayout>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:theme="@style/AppButton"
+                        android:text="@string/main_btn_consultar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
