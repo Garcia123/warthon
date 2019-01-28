@@ -17,5 +17,10 @@
     <item name="main_servicios" type="drawable">@drawable/ic_account_balance_black_24dp</item>
     <item name="main_consultas" type="drawable">@drawable/ic_gavel_black_24dp</item>
 
-    
+    <item name="main_menu_inicio" type="drawable">@drawable/ic_home_black_24dp</item>
+    <item name="main_menu_chat" type="drawable">@drawable/ic_question_answer_black_24dp</item>
+    <item name="main_menu_llamadas" type="drawable">@drawable/ic_format_list_bulleted_black_24dp</item>
+    <item name="main_menu_citas" type="drawable">@drawable/ic_insert_invitation_black_24dp</item>
+    <item name="main_menu_salir" type="drawable">@drawable/ic_exit_to_app_24dp</item>
+
 </resources>

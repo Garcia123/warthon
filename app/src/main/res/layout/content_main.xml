@@ -102,7 +102,7 @@
                                 style="@style/Widget.AppCompat.Spinner.Underlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:entries="@array/values"
+                                android:entries="@array/servicios_legales"
                                 android:spinnerMode="dropdown" />
                         </LinearLayout>
 
@@ -137,13 +137,14 @@
                                 style="@style/Widget.AppCompat.Spinner.Underlined"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:entries="@array/values"
+                                android:entries="@array/tipo_de_consulta"
                                 android:spinnerMode="dropdown" />
                         </LinearLayout>
 
                     </android.support.design.widget.TextInputLayout>
 
                     <Button
+                        android:layout_marginTop="10dp"
                         android:theme="@style/AppButton"
                         android:text="@string/main_btn_consultar"
                         android:layout_width="match_parent"

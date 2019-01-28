@@ -43,9 +43,27 @@
     <string name="menu_title_signoff">Cerrar sesión</string>
 
     <!-- etiquetas para en activity main-->
-    <string-array name="values">
-        <item>Legales</item>
-        <item>Matrimoniales</item>
+    <string-array name="servicios_legales">
+        <item>Derecho corporativo</item>
+        <item>Proteccion al consumidor</item>
+        <item>Derecho financiero</item>
+        <item>Solución de controversias y litigios</item>
+        <item>Derecho penal</item>
+        <item>Energia y minas</item>
+        <item>Derecho laboral y seguridad social</item>
+        <item>Medio ambiente</item>
+        <item>Tributaria</item>
+        <item>Civil</item>
+        <item>Derecho migratorio</item>
+        <item>Derecho aduanero</item>
     </string-array>
+
+    <string-array name="tipo_de_consulta">
+        <item>Consulta chat</item>
+        <item>Consulta video llamada</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
