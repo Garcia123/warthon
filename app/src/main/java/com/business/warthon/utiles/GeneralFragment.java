@@ -1,10 +1,15 @@
 package com.business.warthon.utiles;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toolbar;
@@ -14,11 +19,22 @@ import com.business.warthon.R;
 public abstract class GeneralFragment extends Fragment {
 
     private static final LogWarthon log = LogWarthon.newIntance(GeneralFragment.class.getSimpleName());
-    protected Activity activity;
-    protected NavigationView navigationView;
-    protected Toolbar toolbar;
+    private Activity activity;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
+    private int titulo;
+    private int idItem;
+    private int resId;
 
-
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        this.getToolbar().setTitle(titulo);
+        this.getToolbar().getMenu().clear();
+        this.getNavigationView().setCheckedItem(idItem);
+        this.getToolbar().inflateMenu(resId);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
 
     /**
      * <h1>newBuilder</h1>
@@ -81,7 +97,13 @@ public abstract class GeneralFragment extends Fragment {
 
         GeneralFragmentBuild setToolbar(Toolbar toolbar);
 
-        GeneralFragment builder();
+        GeneralFragmentBuild setTutulio(int titulo);
+
+        GeneralFragmentBuild setCheckedItem(int idItem);
+
+        GeneralFragmentBuild inflateMenu(int resId);
+
+        <T extends GeneralFragment> T create();
     }
 
     public static class GeneralFragmentBuildImpl implements GeneralFragmentBuild {
@@ -111,8 +133,26 @@ public abstract class GeneralFragment extends Fragment {
         }
 
         @Override
-        public GeneralFragment builder() {
-            return this.generalFragment;
+        public GeneralFragmentBuild setTutulio(int titulo) {
+            this.generalFragment.titulo = titulo;
+            return this;
+        }
+
+        @Override
+        public GeneralFragmentBuild setCheckedItem(int idItem) {
+            this.generalFragment.idItem = idItem;
+            return this;
+        }
+
+        @Override
+        public GeneralFragmentBuild inflateMenu(int resId) {
+            this.generalFragment.resId = resId;
+            return this;
+        }
+
+        @Override
+        public <T extends GeneralFragment> T create() {
+            return (T)this.generalFragment;
         }
     }
 

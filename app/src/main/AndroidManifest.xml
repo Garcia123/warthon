@@ -29,7 +29,7 @@
 
         <activity
             android:name=".login.MainActivity"
-            android:theme="@style/MainThema" />
+            />
 
         <activity
             android:name=".login.LoginActivity"
