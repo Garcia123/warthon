@@ -41,6 +41,7 @@
     <string name="menu_title_citas">Mis citas</string>
     <string name="menu_title_otros">Otras opciones</string>
     <string name="menu_title_signoff">Cerrar sesión</string>
+    <string name="main_abogados">Abogados</string>
 
     <!-- etiquetas para en activity main-->
     <string-array name="servicios_legales">
@@ -63,7 +64,9 @@
         <item>Consulta video llamada</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="lista_abogados">
+        <item>Katty Cachay</item>
+        <item>Yorry Warthon</item>
+    </string-array>
 
 </resources>

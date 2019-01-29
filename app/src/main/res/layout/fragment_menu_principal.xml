@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".login.MenuPrincipalFragment">
+    tools:context=".login.views.MenuPrincipalFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7"
-        android:orientation="vertical">
+        android:orientation="vertical">x
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,6 +126,41 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/tipo_de_consulta"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- spinner abogados -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_abogados"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/main_abogados"
+                        android:contentDescription="@string/login_todo" />
+
+                    <Spinner
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/lista_abogados"
                         android:spinnerMode="dropdown" />
                 </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.business.warthon.utiles;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,13 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.business.warthon.R;
 
 public abstract class GeneralFragment extends Fragment {
 
     private static final LogWarthon log = LogWarthon.newIntance(GeneralFragment.class.getSimpleName());
+    private ContentActivity contentActivity;
     private Activity activity;
     private NavigationView navigationView;
     private Toolbar toolbar;
@@ -29,11 +31,35 @@ public abstract class GeneralFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        this.getToolbar().setTitle(titulo);
+        this.setTitulo(titulo);
         this.getToolbar().getMenu().clear();
         this.getNavigationView().setCheckedItem(idItem);
-        this.getToolbar().inflateMenu(resId);
+        this.inflateMenu(resId);
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof ContentActivity) {
+            contentActivity = (ContentActivity) context;
+            activity = (Activity) context;
+            //mainActivity.setActivityAconKeyDown(this::onKeyDown);
+        } else {
+            throw new RuntimeException(context.toString() + " must implement ContentActivity");
+        }
+    }
+
+    private void setTitulo(int idRecurso){
+        if(idRecurso != 0){
+            this.getToolbar().setTitle(titulo);
+        }
+    }
+
+    private void inflateMenu(int idRecurso) {
+        if (idRecurso != 0) {
+            this.getToolbar().inflateMenu(idRecurso);
+        }
     }
 
     /**
@@ -85,13 +111,22 @@ public abstract class GeneralFragment extends Fragment {
         return toolbar;
     }
 
+    protected ContentActivity getContentActivity() {
+        return contentActivity;
+    }
+
+    protected abstract void cargarElementos(View view);
+
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Fragment fragment);
     }
 
-    public interface GeneralFragmentBuild {
+    public interface ContentActivity {
+        GeneralFragment crearFragment(GeneralFragmentBuild gfb);
+        void cambiarFragment(GeneralFragment fragment);
+    }
 
-        GeneralFragmentBuild setContenActivity(Activity activity);
+    public interface GeneralFragmentBuild {
 
         GeneralFragmentBuild setNavigationView(NavigationView navigationView);
 
@@ -112,12 +147,6 @@ public abstract class GeneralFragment extends Fragment {
 
         public GeneralFragmentBuildImpl(GeneralFragment generalFragment) {
             this.generalFragment = generalFragment;
-        }
-
-        @Override
-        public GeneralFragmentBuild setContenActivity(Activity activity) {
-            generalFragment.activity = activity;
-            return this;
         }
 
         @Override

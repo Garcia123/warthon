@@ -1,4 +1,4 @@
-package com.business.warthon.login;
+package com.business.warthon.login.views;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

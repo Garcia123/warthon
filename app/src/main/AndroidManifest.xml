@@ -13,7 +13,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
-            android:name=".login.SplashScreenActivity"
+            android:name=".login.views.SplashScreenActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,16 +23,16 @@
         </activity>
 
         <activity
-            android:name=".login.RegistrarActivity"
+            android:name=".login.views.RegistrarActivity"
             android:label="@string/title_activity_registrar"
             android:theme="@style/RegistarTheme" />
 
         <activity
-            android:name=".login.MainActivity"
+            android:name=".login.views.MainActivity"
             />
 
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".login.views.LoginActivity"
             android:theme="@style/loginTheme" />
     </application>
 
