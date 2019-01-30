@@ -8,11 +8,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.business.warthon.R;
+import com.business.warthon.login.contracts.LoginContract;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View {
 
     TextView txtLinkRegistrar;
     Button btnIngesar;
+    LoginContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,14 @@ public class LoginActivity extends AppCompatActivity {
 
         this.btnIngesar = findViewById(R.id.btnIngesar);
         this.btnIngesar.setOnClickListener(this::ingresarSistema);
+
+        this.presenter = this.instanciarPresenter();
+    }
+
+    private LoginContract.Presenter instanciarPresenter() {
+        return LoginContract.newPresenter()
+            .setContext(this)
+            .setView(this);
     }
 
     private void ingresarSistema(View view) {
@@ -34,5 +44,10 @@ public class LoginActivity extends AppCompatActivity {
     private void registrarUsurio(View view) {
         Intent intent = new Intent(this, RegistrarActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void errorRespuesta(String mensaje) {
+
     }
 }
