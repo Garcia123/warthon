@@ -34,4 +34,9 @@ package com.business.warthon.login.presenters;
  	public LoginContract.View getView() {
  		return view;
  	}
+
+	 @Override
+	 public void loginCorreoPasswor(String correo, String password) {
+		interactor.loginCorreoPasswor(correo,password);
+	 }
  }

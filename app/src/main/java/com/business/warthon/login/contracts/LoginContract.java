@@ -13,11 +13,14 @@ public interface LoginContract {
  	static Interactor newInteractor(){return new LoginInteractor();}
 
  	interface View extends PadreView {
+        void respuestaLoginCorreoPasswor(boolean estado);
  	}
 
  	interface Presenter extends PadrePresenter<Presenter, View> {
+ 	    void loginCorreoPasswor(String correo, String password);
  	}
 
  	interface Interactor extends PadreInteractor<Interactor, Presenter> {
+        void loginCorreoPasswor(String correo, String password);
  	}
  }
