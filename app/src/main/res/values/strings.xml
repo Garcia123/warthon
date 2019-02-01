@@ -12,6 +12,8 @@
 
     <!-- etiquetas para el login activity -->
     <string name="login_correo">Correo</string>
+    <string name="login_validate_correo_vacio">Ingrese el correo</string>
+    <string name="login_validate_correo_es_correo">Ingrese un correo valido</string>
     <string name="login_password">Password</string>
     <string name="login_ingresar">Ingresar</string>
     <string name="login_label">Si no tienes cuenta registrate</string>
@@ -21,11 +23,17 @@
 
     <!-- etiquetas para el registo activity -->
     <string name="registro_correo">Correo</string>
+    <string name="registro_correo_validar">Ingrese un correo</string>
     <string name="registro_password">Password</string>
+    <string name="registro_passwor_validar">Ingrese un password</string>
     <string name="registro_nombres">Nombres</string>
+    <string name="registro_nombres_validar">Ingrese sus nombre o nombres</string>
     <string name="registro_apellidos">Apellidos</string>
+    <string name="registro_apellidos_validar">Ingresa tus apellidos o apellido</string>
     <string name="registro_telefono">Teléfono</string>
+    <string name="registro_telefono_validar">Ingrese su teléfono</string>
     <string name="registro_dni">DNI</string>
+    <string name="registro_dni_validar">Ingrese tu DNI</string>
     <string name="registro_registrar">Registrar</string>
 
     <!-- eiquetas para el main activity -->
@@ -42,6 +50,7 @@
     <string name="menu_title_otros">Otras opciones</string>
     <string name="menu_title_signoff">Cerrar sesión</string>
     <string name="main_abogados">Abogados</string>
+    <string name="login_validate_password">Ingresar Password</string>
 
     <!-- etiquetas para en activity main-->
     <string-array name="servicios_legales">

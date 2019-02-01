@@ -17,6 +17,9 @@ public class LoginInteractor implements LoginContract.Interactor {
 
     @Override
     public void loginCorreoPasswor(String correo, String password) {
-        _login.iniciarSesionCorreoPassword(presenter.getContext(), correo, password, presenter.getView()::respuestaLoginCorreoPasswor);
+        _login.iniciarSesionCorreoPassword(presenter.getContext(), correo, password,
+            presenter.getView()::respuestaLoginCorreoPasswor,
+            presenter.getView()::errorRespuesta
+        );
     }
 }

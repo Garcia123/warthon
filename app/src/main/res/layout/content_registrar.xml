@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroNombres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroApellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
 
-                <android.support.design.widget.TextInputEditText
+                <EditText
                     android:id="@+id/txtRegistroDni"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,6 +118,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
+                android:id="@+id/btnRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/registro_registrar"

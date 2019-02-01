@@ -9,16 +9,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.business.warthon.R;
 import com.business.warthon.login.contracts.LoginContract;
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Email;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.View {
+import java.util.List;
+
+public class LoginActivity extends AppCompatActivity implements LoginContract.View, Validator.ValidationListener {
+
     ProgressBar progressBar;
-    EditText txtCorreo, txtPassword;
     TextView txtLinkRegistrar;
     Button btnIngesar;
+
+    @NotEmpty(messageResId = R.string.login_validate_password)
+    EditText txtPassword;
+
+    @Email(messageResId = R.string.login_validate_correo_es_correo)
+    EditText txtCorreo;
+
     LoginContract.Presenter presenter;
+    Validator validator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +52,19 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         this.btnIngesar.setOnClickListener(this::ingresarSistema);
 
         this.presenter = this.instanciarPresenter();
+
+        this.validator = new Validator(this);
+        validator.setValidationListener(this);
     }
 
     private LoginContract.Presenter instanciarPresenter() {
         return LoginContract.newPresenter()
-            .setContext(this)
-            .setView(this);
+                .setContext(this)
+                .setView(this);
     }
 
     private void ingresarSistema(View view) {
-        mostrarProgresBar(true);
-        presenter.loginCorreoPasswor(
-            this.txtCorreo.getText().toString(),
-            this.txtPassword.getText().toString()
-        );
+        validator.validate();
     }
 
     private void registrarUsurio(View view) {
@@ -60,7 +74,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @Override
     public void errorRespuesta(String mensaje) {
-
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -73,7 +87,31 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         mostrarProgresBar(false);
     }
 
-    void mostrarProgresBar(boolean estado){
+    @Override
+    public void onValidationSucceeded() {
+        mostrarProgresBar(true);
+        presenter.loginCorreoPasswor(
+                this.txtCorreo.getText().toString(),
+                this.txtPassword.getText().toString()
+        );
+    }
+
+    @Override
+    public void onValidationFailed(List<ValidationError> errors) {
+        for (ValidationError error : errors) {
+            View view = error.getView();
+            String message = error.getCollatedErrorMessage(this);
+            // Display error messages ;)
+            if (view instanceof EditText) {
+                ((EditText) view).setError(message);
+                break;
+            } else {
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    void mostrarProgresBar(boolean estado) {
         progressBar.setVisibility(estado ? View.VISIBLE : View.GONE);
     }
 }

@@ -35,6 +35,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.google.firebase:firebase-firestore:18.0.0'
 
+    //librerias para el proyecto
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
 
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'

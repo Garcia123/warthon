@@ -2,6 +2,7 @@ package com.business.warthon.login.presenters;
 
 import android.content.Context;
 import com.business.warthon.login.contracts.RegistrarContract;
+import com.business.warthon.model.Usuario;
 
 public class RegistrarPresenter implements RegistrarContract.Presenter {
 
@@ -33,5 +34,10 @@ public class RegistrarPresenter implements RegistrarContract.Presenter {
     @Override
     public RegistrarContract.View getView() {
         return view;
+    }
+
+    @Override
+    public void RegistrarUsuario(Usuario usuario) {
+
     }
 }

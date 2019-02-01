@@ -20,13 +20,17 @@ public class FireBaseLogin implements DaoLogin {
     }
 
     @Override
-    public void iniciarSesionCorreoPassword(Context context, String correo, String password, RespuestaSucces<Boolean> callback) {
+    public void iniciarSesionCorreoPassword(Context context, String correo, String password, RespuestaSucces<Boolean> callback,RespuestaError error) {
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(correo,password)
             .addOnCompleteListener((Activity)context, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    callback.onRespuestaSucces(task.isSuccessful());
+                    boolean isSuccessFul = task.isSuccessful();
+                    callback.onRespuestaSucces(isSuccessFul);
+                    if(!isSuccessFul){
+                        error.onRespuestaError(task.getException().getMessage());
+                    }
                 }
             });
     }
