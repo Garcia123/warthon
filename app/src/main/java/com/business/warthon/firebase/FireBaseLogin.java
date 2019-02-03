@@ -5,10 +5,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.business.warthon.dao.DaoLogin;
-import com.business.warthon.model.Cliente;
 import com.business.warthon.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -48,7 +48,7 @@ public class FireBaseLogin implements DaoLogin {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Usuario user = new Cliente();
+                        Usuario user = new Usuario();
                         user.setUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
                         callBack.onRespuestaSucces(user);
                     }else {
@@ -56,6 +56,21 @@ public class FireBaseLogin implements DaoLogin {
                     }
                 }
             });
+    }
+
+    @Override
+    public void iniciarSesionConCredenciales(Context context, AuthCredential credential, RespuestaSucces<Boolean> callback, RespuestaError error) {
+        FirebaseAuth.getInstance().signInWithCredential(credential)
+                .addOnCompleteListener((Activity)context, new OnCompleteListener<AuthResult>(){
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        boolean isSuccessFul = task.isSuccessful();
+                        callback.onRespuestaSucces(isSuccessFul);
+                        if(!isSuccessFul){
+                            error.onRespuestaError(task.getException().getMessage());
+                        }
+                    }
+                });
     }
 }
 

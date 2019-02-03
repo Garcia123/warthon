@@ -2,17 +2,32 @@ package com.business.warthon.login.views;
 
 import android.content.Intent;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.business.warthon.R;
 import com.business.warthon.login.contracts.LoginContract;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
@@ -20,12 +35,13 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
 import java.util.List;
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.View, Validator.ValidationListener {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View, Validator.ValidationListener{
 
+    private static final int RC_SIGN_IN = 777;
     ProgressBar progressBar;
     TextView txtLinkRegistrar;
     Button btnIngesar;
-
+    RelativeLayout btnGoogle;
     @NotEmpty(messageResId = R.string.login_validate_password)
     EditText txtPassword;
 
@@ -34,6 +50,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     LoginContract.Presenter presenter;
     Validator validator;
+
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +69,24 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         this.btnIngesar = findViewById(R.id.btnIngesar);
         this.btnIngesar.setOnClickListener(this::ingresarSistema);
 
+        this.btnGoogle = findViewById(R.id.btnGoogle);
+        this.btnGoogle.setOnClickListener(this::onBtnLoginGoogle);
         this.presenter = this.instanciarPresenter();
 
         this.validator = new Validator(this);
         validator.setValidationListener(this);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id2))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    private void onBtnLoginGoogle(View view) {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     private LoginContract.Presenter instanciarPresenter() {
@@ -114,4 +146,30 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     void mostrarProgresBar(boolean estado) {
         progressBar.setVisibility(estado ? View.VISIBLE : View.GONE);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            handlerGoogleSignInApi(data);
+        }
+    }
+
+    private void handlerGoogleSignInApi(Intent data) {
+        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+        try {
+            // Google Sign In was successful, authenticate with Firebase
+            GoogleSignInAccount account = task.getResult(ApiException.class);
+            authWithGoogle(account);
+        } catch (ApiException e) {
+            errorRespuesta(e.getMessage());
+        }
+    }
+
+    private void authWithGoogle(GoogleSignInAccount acct) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        presenter.loginConCredencial(credential);
+        mostrarProgresBar(true);
+    }
+
 }

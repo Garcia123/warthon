@@ -3,6 +3,7 @@ package com.business.warthon.login.interactors;
 import com.business.warthon.dao.DataFactory;
 import com.business.warthon.dao.DaoLogin;
 import com.business.warthon.login.contracts.LoginContract;
+import com.google.firebase.auth.AuthCredential;
 
 public class LoginInteractor implements LoginContract.Interactor {
     DataFactory _factory = DataFactory.getFactory(DataFactory.FIREBASE);
@@ -18,6 +19,14 @@ public class LoginInteractor implements LoginContract.Interactor {
     @Override
     public void loginCorreoPasswor(String correo, String password) {
         _login.iniciarSesionCorreoPassword(presenter.getContext(), correo, password,
+            presenter.getView()::respuestaLoginCorreoPasswor,
+            presenter.getView()::errorRespuesta
+        );
+    }
+
+    @Override
+    public void loginConCredencial(AuthCredential credential) {
+        _login.iniciarSesionConCredenciales(presenter.getContext(), credential,
             presenter.getView()::respuestaLoginCorreoPasswor,
             presenter.getView()::errorRespuesta
         );

@@ -2,7 +2,10 @@ package com.business.warthon.model;
 
 import java.util.Date;
 
-public abstract class Usuario {
+public class Usuario {
+
+    public static final int CLIENTE = 1;
+    public static final int ABOGADO = 2;
 
     private String uid;
     private String apellidos;

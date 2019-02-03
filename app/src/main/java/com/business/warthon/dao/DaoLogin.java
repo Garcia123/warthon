@@ -3,6 +3,7 @@ package com.business.warthon.dao;
 import android.content.Context;
 
 import com.business.warthon.model.Usuario;
+import com.google.firebase.auth.AuthCredential;
 
 public interface DaoLogin extends InterfaceGeneral {
     void vificarSesion(RespuestaSucces<Boolean> respuesta);
@@ -12,4 +13,6 @@ public interface DaoLogin extends InterfaceGeneral {
     void cerrarSecion(RespuestaSucces<?> callback);
 
     void registrarUsuario(Context context, String correo, String password, RespuestaSucces<Usuario> callBack, RespuestaError error);
+
+    void iniciarSesionConCredenciales(Context context, AuthCredential credential,RespuestaSucces<Boolean> callback, RespuestaError error);
 }

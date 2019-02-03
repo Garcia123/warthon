@@ -2,8 +2,9 @@ package com.business.warthon.login.presenters;
 
  import android.content.Context;
  import com.business.warthon.login.contracts.LoginContract;
+ import com.google.firebase.auth.AuthCredential;
 
- public class LoginPresenter implements LoginContract.Presenter {
+public class LoginPresenter implements LoginContract.Presenter {
 
  	LoginContract.Interactor interactor;
  	LoginContract.View view;
@@ -39,4 +40,9 @@ package com.business.warthon.login.presenters;
 	 public void loginCorreoPasswor(String correo, String password) {
 		interactor.loginCorreoPasswor(correo,password);
 	 }
- }
+
+	@Override
+	public void loginConCredencial(AuthCredential credential) {
+		interactor.loginConCredencial(credential);
+	}
+}

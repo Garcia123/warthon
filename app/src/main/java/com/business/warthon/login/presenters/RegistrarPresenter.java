@@ -38,6 +38,6 @@ public class RegistrarPresenter implements RegistrarContract.Presenter {
 
     @Override
     public void RegistrarUsuario(Usuario usuario) {
-
+        interactor.RegistrarUsuario(usuario);
     }
 }

@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Warthon</string>
     <string name="title_activity_main">Warthon</string>
     <string name="title_activity_registrar">Regístrate</string>
@@ -20,6 +21,7 @@
     <string name="login_aqui">aquí</string>
     <string name="login_google">Ingresar con google</string>
     <string name="login_todo">TODO</string>
+    <string name="login_validate_password">Ingresar Password</string>
 
     <!-- etiquetas para el registo activity -->
     <string name="registro_correo">Correo</string>
@@ -35,6 +37,7 @@
     <string name="registro_dni">DNI</string>
     <string name="registro_dni_validar">Ingrese tu DNI</string>
     <string name="registro_registrar">Registrar</string>
+    <string name="registro_usuario_creado">El usuario se creo exitosamente</string>
 
     <!-- eiquetas para el main activity -->
     <string name="main_servicios">Servicios Warthon</string>
@@ -50,7 +53,9 @@
     <string name="menu_title_otros">Otras opciones</string>
     <string name="menu_title_signoff">Cerrar sesión</string>
     <string name="main_abogados">Abogados</string>
-    <string name="login_validate_password">Ingresar Password</string>
+
+
+    <string name="default_web_client_id2">TGVIzeHsoCkPTkvqOursJD5X</string>
 
     <!-- etiquetas para en activity main-->
     <string-array name="servicios_legales">

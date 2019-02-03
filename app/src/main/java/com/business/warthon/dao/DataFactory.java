@@ -7,7 +7,7 @@ public abstract class DataFactory {
     public static final int FIREBASE = 1;
 
     public abstract DaoLogin getLoginDao();
-    public abstract DaoCliente getClienteDao();
+    public abstract DaoUsuario getUsurarioDao();
 
     public static DataFactory getFactory(int tipo) {
         switch (tipo) {
