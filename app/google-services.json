@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "435874085491-kn6v103nida1kbr7mh67f59hqlccdcj3.apps.googleusercontent.com",
+          "client_id": "435874085491-hejp0omgkac3tvnmhj4ah0i6muc1oqco.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.business.warthon",
-            "certificate_hash": "aa693336537cc5b1e155e3b1695e2ba6c0718c81"
+            "certificate_hash": "aa78c8d2df1d34a8eec437765d40cbdf0f168719"
           }
         },
         {

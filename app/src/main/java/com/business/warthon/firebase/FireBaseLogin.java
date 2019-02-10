@@ -68,6 +68,7 @@ public class FireBaseLogin implements DaoLogin {
                         callback.onRespuestaSucces(isSuccessFul);
                         if(!isSuccessFul){
                             error.onRespuestaError(task.getException().getMessage());
+                            task.getException().printStackTrace();
                         }
                     }
                 });

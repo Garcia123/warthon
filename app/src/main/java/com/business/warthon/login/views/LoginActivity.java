@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.business.warthon.R;
 import com.business.warthon.login.contracts.LoginContract;
+import com.business.warthon.utiles.LogWarthon;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -36,6 +37,8 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View, Validator.ValidationListener{
+
+    LogWarthon log = LogWarthon.newIntance(LoginActivity.class.getSimpleName());
 
     private static final int RC_SIGN_IN = 777;
     ProgressBar progressBar;
@@ -107,6 +110,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void errorRespuesta(String mensaje) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
+        log.error(mensaje);
     }
 
     @Override
